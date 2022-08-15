@@ -4,7 +4,7 @@
 
 ### web_log
 
-Internamente usa la funzione ```web_sys::console::log_1``` a cui viene passago un JsValue.
+Internamente usa la funzione ```web_sys::console::log_1``` a cui viene passato un JsValue.
 
 Esempi:
 ```rust
