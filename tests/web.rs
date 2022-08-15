@@ -21,6 +21,19 @@ fn macro_js() {
 }
 
 #[wasm_bindgen_test]
+fn macro_js_from_string() {
+    // Arrange
+    let value = "hello";
+    let expected = wasm_bindgen::JsValue::from_str(value);
+
+    // Act
+    let js_value = js!("{}", value);
+
+    // Assert
+    assert_eq!(expected, js_value);
+}
+
+#[wasm_bindgen_test]
 fn macro_js_format() {
     // Arrange
     let expected = wasm_bindgen::JsValue::from("hello world".to_string());
