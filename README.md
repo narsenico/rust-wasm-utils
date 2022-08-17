@@ -24,7 +24,18 @@ let js: JsValue = js!("My js value");
 let js: JsValue = js!("My {} value", "js");
 ```
 
-### test
+## convert
+
+I trait ```ToJsValue``` e ```DisplayToJsValue``` mettono a disposizione il metodo ```to_js()``` per convertire un oggetto in ```JsValue```.
+
+Esempi:
+```rust
+let js: JsValue = "My js value".to_js();
+
+let _ = read_to_string(reader).map_err(|err| err.to_js());
+```
+
+## test
 ```bash
 cargo watch -q -s "wasm-pack test --chrome"
 ```
